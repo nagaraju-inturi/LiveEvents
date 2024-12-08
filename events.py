@@ -2,8 +2,7 @@ import os
 import requests
 
 def getEvents(keyword, city, zipcode, evdate, page):
-    # TICKETMASTER_API_KEY = os.getenv("TICKETMASTER_API_KEY")
-    TICKETMASTER_API_KEY = "R5unI6FfUKMxj7oAKappEHj7uyhfJInA"
+    TICKETMASTER_API_KEY = os.getenv("TICKETMASTER_API_KEY")
     inputStr = ""
     if keyword is not None and keyword != "":
         inputStr = inputStr + "&keyword=" + keyword
