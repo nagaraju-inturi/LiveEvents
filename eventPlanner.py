@@ -18,7 +18,7 @@ def eventSchedule(cityName, eventName, dateVal):
         input_variables=input_variables, template=summary_template
     )
 
-    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo", organization="org-zW47QxuppWd8Kx5vsWjXjEbw")
+    llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
     chain = summary_prompt_template | llm
     res = chain.invoke(input={"cityName": cityName, "eventName": eventName, "dateVal": dateVal})
