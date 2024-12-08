@@ -37,6 +37,9 @@ from weather import getTemperature
 import json
 import datetime
 import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.title('_:blue[Live Events Search]_ ')
 client_ip = get_remote_ip()
@@ -65,8 +68,6 @@ if st.button("Search"):
         if line.isdigit():
             continue
         st.markdown("- " + line)
-    #st.line_chart(temperature_df)
-    # st.dataframe(temperature_df, hide_index=True)
     events = getEvents(keywords, city, zipcode, evdate.strftime("%Y-%m-%d"), '0')
     if events and len(events) > 0:
       # st.write(json.dumps(events))
@@ -77,5 +78,5 @@ if st.button("Search"):
       # Display DataFrame using st.table()
       # st.table(df_sorted)  
     else:
-      st.write("No data.")
+      st.write("No data for " + keywords + " on or after " + evdate.strftime("%Y-%m-%d"))
     

@@ -28,7 +28,6 @@ def getEvents(keyword, city, zipcode, evdate, page):
            + page
            + "&stort=date,asc"
     )
-    # print (url)
 
     ticketmaster_request = requests.get(url=url)
 

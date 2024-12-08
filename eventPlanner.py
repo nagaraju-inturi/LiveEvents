@@ -1,12 +1,8 @@
-from dotenv import load_dotenv
 from langchain.prompts.prompt import PromptTemplate
 from langchain_openai import ChatOpenAI
 import os
 
 def eventSchedule(cityName, eventName, dateVal):
-    load_dotenv()
-
-    # print("Hello LangChain")    
 
     summary_template = """
     given the travel destination city {cityName} about a person who is attending live event {eventName} at date {dateVal}:
@@ -25,5 +21,4 @@ def eventSchedule(cityName, eventName, dateVal):
 
     res = res.content
     res = res.split('\n\n')
-    # print (res)
     return res
